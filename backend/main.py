@@ -13,10 +13,10 @@ import pandas as pd
 import numpy as np
 from prophet import Prophet
 
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173"
-]
+# origins = [
+#     "http://localhost:5173",
+#     "http://127.0.0.1:5173"
+# ]
 
 
 models = {}
