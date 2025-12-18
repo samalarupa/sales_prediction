@@ -16,8 +16,8 @@ export const dummyForecast = [
 
 export const dummyMetrics = {
   model_version: "Hybrid-Prophet-LGBM-v1",
-  accuracy: 84.89,
-  wmape: 15.11,
+  accuracy: 70.00,
+  wmape: 30.00,
   last_trained: "2025-12-16T17:08:22",
 };
 
