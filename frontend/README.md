@@ -1,128 +1,18 @@
-# 📊 Sale Prediction – Hybrid Sales Forecasting System
+# React + Vite
 
-A production-ready **Sales Prediction system** that forecasts future sales for multiple products using a **hybrid machine learning approach**.  
-The system is designed to deliver **accurate, business-oriented forecasts** even with **limited historical data**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Project Overview
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This project predicts **weekly sales for 800+ products** over a **2-year forecast horizon**, using only **52 weeks of historical data**.  
-To overcome data constraints, a **Hybrid Ensemble Model** is used:
+## React Compiler
 
-- **Facebook Prophet** for trend and seasonality
-- **LightGBM** for learning global correction patterns
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-This approach combines **time-series forecasting** with **machine learning intelligence**.
+Note: This will impact Vite dev & build performances.
 
----
+## Expanding the ESLint configuration
 
-## 🎯 Objectives
-
-- Forecast sales accurately with short historical data
-- Handle zero and intermittent sales
-- Provide business-relevant evaluation metrics
-- Support batch forecasting and live retraining
-- Enable scalable deployment using APIs
-
----
-
-## 🧠 Model Architecture
-
-### Level 1: Facebook Prophet
-- Captures yearly seasonality and trend
-- Handles missing values and noisy data
-- Suitable for short time-series datasets
-
-### Level 2: LightGBM
-- Uses Prophet predictions as features
-- Learns cross-product and global sales patterns
-- Corrects Prophet prediction errors
-
----
-
-## ⚙️ Data Pipeline
-
-1. Convert wide-format sales data to long format
-2. Apply log transformation to stabilize variance
-3. Generate cyclical time features (week/month)
-4. Encode product identifiers
-5. Train hybrid model
-6. Store forecasts and metrics in database
-
----
-
-## 📈 Evaluation Metrics
-
-- **WMAPE (Weighted Mean Absolute Percentage Error)**
-- **MAE (Mean Absolute Error)**
-- **RMSE (Root Mean Square Error)**
-- **Business Accuracy = 1 − WMAPE**
-
-Metrics are selected to reflect **real business impact**.
-
----
-
-## 🏗️ Tech Stack
-
-### Backend
-- Python 3.11
-- FastAPI
-- Facebook Prophet
-- LightGBM
-- PostgreSQL
-- Prisma ORM
-
-### Frontend
-- React
-- Material UI
-- Recharts
-
-### Storage
-- Local filesystem (development)
-- Azure Blob Storage (production)
-
----
-
-## 🌐 API Endpoints
-
-| Method | Endpoint | Description |
-|------|--------|------------|
-| GET | `/sales/history/{id}` | Fetch historical sales |
-| GET | `/sales/forecast/{id}` | Fetch forecasted sales |
-| POST | `/sales/forecast/live/{id}` | Live retraining & update |
-
----
-
-## 🖥️ Dashboard Features
-
-- Sales history visualization
-- Forecast charts (weekly / monthly / yearly)
-- KPI cards (Revenue, Growth, Accuracy)
-- Product heatmap & leaderboard
-- Export forecasts to CSV
-
----
-
-## ✅ Project Status
-
-- [x] Data pipeline implemented  
-- [x] Hybrid model trained and validated  
-- [x] Backend API developed  
-- [x] Frontend dashboard integrated  
-- [x] Ready for deployment  
-
----
-
-## 📌 Use Cases
-
-- Demand forecasting
-- Inventory planning
-- Supply chain optimization
-- Business decision support
-
----
-
-## 📄 License
-
-This project is developed for **academic and learning purposes**.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
