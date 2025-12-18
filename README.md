@@ -7,13 +7,13 @@ The system is designed to deliver **accurate, business-oriented forecasts** even
 
 ##  Project Overview
 
-This project predicts **weekly sales for 800+ products** over a **2-year forecast horizon**, using only **52 weeks of historical data**.  
+This project predicts **weekly sales for 800+ products** over a **2-year forecast horizon**, using only **52 values/product of weekly of historical data**.  
 To overcome data constraints, a **Hybrid Ensemble Model** is used:
 
-- **Facebook Prophet** for trend and seasonality
-- **LightGBM** for learning global correction patterns
+- **Facebook's Prophet** for trend (adaptive Linear & Logistic curves) and seasonality (recurring patterns) detection
+- **LightGBM** for learning global correction patterns and Final Ensemble Model
 
-This approach combines **time-series forecasting** with **machine learning intelligence**.
+This approach combines **time-series forecasting of Prophet** with **machine learning intelligence of LightGBM**.
 
 ---
 
@@ -90,6 +90,7 @@ Metrics are selected to reflect **real business impact**.
 |------|--------|------------|
 | GET | `/sales/history/{id}` | Fetch historical sales |
 | GET | `/sales/forecast/{id}` | Fetch forecasted sales |
+| GET | `/metrics/model/` | Fetch metrics of the trained model |
 | POST | `/sales/forecast/live/{id}` | Live retraining & update |
 
 ---
@@ -111,7 +112,7 @@ Metrics are selected to reflect **real business impact**.
 - [x] Backend API developed  
 - [x] Frontend dashboard integrated  
 - [x] Ready for deployment  
-
+- [x] We were able to achieve more than 84% accuracy with new Ensemble model from the initial 71% accuracy by only using LightGBM
 ---
 
 ##  Use Cases
@@ -125,4 +126,4 @@ Metrics are selected to reflect **real business impact**.
 
 ## 📄 License
 
-This project is developed for **academic and learning purposes**.
+This project is developed for **academic and learning purposes Under MIT LICENSE**.
