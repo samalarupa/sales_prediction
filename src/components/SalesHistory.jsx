@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { api, endpoints } from "../services/api";
-import { getTotalRevenue, calculateGrowth } from "../utils/dataHelpers";
+import { api, endpoints } from "../services/api.js";
+import { getTotalRevenue, calculateGrowth } from "../utils/dataHelpers.js";
 import { History, DollarSign, TrendingUp, ArrowLeft, AlertCircle } from "lucide-react";
 import {
   AreaChart,
